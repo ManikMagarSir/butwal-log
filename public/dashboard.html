@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Dashboard</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<nav><span class="brand-plaque"><img class="brand-logo" src="/img/timeslogo.png" alt="Times Global logo"></span><b>Butwal DC Logbook</b><span class="sp"></span><span id="navuser" class="mut"></span>
+<div class="nav-links"><a href="/dc-log.html">DC Log</a><a href="/genset-log.html">Genset</a><a id="adminlink" href="/admin.html">Admin</a></div>
+<button class="ghost" id="logoutBtn">Logout</button></nav>
+<div class="wrap">
+<p class="dash-date" id="todayLine"></p>
+<h1 class="dash-title">Shift overview</h1>
+<p class="dash-sub">DC slot coverage for today first, then the latest entries.</p>
+<div class="card"><h2>Today, DC slots</h2><div id="coverage"></div></div>
+<div class="dash-actions"><a href="/dc-log.html"><button>Take DC log</button></a><a href="/genset-log.html"><button class="ghost">Take genset log</button></a></div>
+<div class="grid2">
+<div class="card"><h2>Latest DC logs</h2><div class="mini-list" id="dc"></div></div>
+<div class="card"><h2>Genset today</h2><div class="mini-list" id="gs"></div><p class="mut" id="fuelLine"></p></div>
+</div>
+</div>
+<script src="/js/theme.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/dashboard.js"></script></body></html>

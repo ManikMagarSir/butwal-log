@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Admin</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<nav><span class="brand-plaque"><img class="brand-logo" src="/img/timeslogo.png" alt="Times Global logo"></span><b>Admin</b><span class="sp"></span><span id="navuser" class="mut"></span><div class="nav-links"><a href="/dashboard.html">Dashboard</a></div><button class="ghost" id="logoutBtn">Logout</button></nav>
+<div class="wrap">
+<div class="card"><h2>Users</h2><div class="table-scroll"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Action</th></tr></thead><tbody id="users"></tbody></table></div></div>
+<div class="card"><h2>Export CSV</h2>
+<div class="row"><input id="from" class="filter-date" type="date" aria-label="Export from date"><input id="to" class="filter-date" type="date" aria-label="Export to date">
+<a id="e1" href="#"><button class="ghost">DC CSV</button></a><a id="e2" href="#"><button class="ghost">Genset CSV</button></a></div>
+<p class="mut">Exports hit /api/export/*.csv with your login cookie.</p></div>
+</div>
+<script src="/js/theme.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/admin.js"></script></body></html>

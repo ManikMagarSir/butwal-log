@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060607">
+<title>Verify code · Butwal DC Logbook</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<div class="auth-shell">
+  <div class="auth-brand">
+    <div class="brand-plaque"><img class="brand-logo" src="/img/timeslogo.png" alt="Times Global logo"></div>
+    <div class="brand-title">Check<br>your mail</div>
+    <div class="brand-rule" aria-hidden="true"></div>
+    <p class="brand-sub">Your code is on its way. It expires in a few minutes. Keep this tab open.</p>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-box">
+      <h1>Enter code</h1>
+      <p class="sub" id="who"></p>
+      <div class="card">
+        <label for="otp">6-digit code</label><input id="otp" class="auth-otp" placeholder="6-digit code" maxlength="6" inputmode="numeric" autocomplete="one-time-code" autofocus>
+        <br><button id="verifyBtn">Verify</button>
+        <p id="msg" class="mut" role="status" aria-live="polite"></p>
+        <p class="mut">No code after a minute? Check your spam folder, then <a href="/login.html">resend it</a>.</p>
+      </div>
+      <p class="auth-alt mut"><a href="/login.html">Wrong email? Start over</a></p>
+    </div>
+  </div>
+</div>
+<script src="/js/theme.js"></script><script src="/js/api.js"></script>
+<script src="/js/verify.js"></script></body></html>

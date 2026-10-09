@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060607">
+<meta name="color-scheme" content="dark">
+<title>Genset Log</title><link rel="stylesheet" href="/css/style.css"></head>
+<body data-page="gs">
+<nav><span class="brand-plaque"><img class="brand-logo" src="/img/timeslogo.png" alt="Times Global logo"></span><b>Genset Log</b><span class="sp"></span><span id="navuser" class="mut"></span><div class="nav-links"><a href="/dashboard.html">Dashboard</a><a href="/dc-log.html">DC Log</a></div><button class="ghost" id="logoutBtn">Logout</button></nav>
+<div class="wrap">
+<div class="tabs" role="tablist" aria-label="Genset log sections">
+  <button class="tab-btn active" id="tabNew" role="tab" aria-selected="true" aria-controls="pane-new">New entry</button>
+  <button class="tab-btn" id="tabHist" role="tab" aria-selected="false" aria-controls="pane-hist">History</button>
+</div>
+
+<div class="tabpane active" id="pane-new" role="tabpanel" aria-labelledby="tabNew" tabindex="0">
+<div class="card"><h2>New Genset entry</h2>
+  <div class="progress" role="progressbar" aria-label="Form progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" id="barWrap"><div id="bar"></div></div>
+  <div class="row"><span class="step-count" id="stepCount" aria-live="polite">Step 1 of 4</span></div>
+  <div class="steps-label" id="stepsLabel">
+    <span data-s="1">Run details</span><span data-s="2">Genset 1</span><span data-s="3">Genset 2</span><span data-s="4">Stock and review</span>
+  </div>
+
+  <div class="step active" data-step="1" aria-label="Run details">
+    <h3>Run details</h3>
+    <div class="grid3">
+      <div><label for="date">Date</label><input id="date" type="date"><p class="field-err" id="e-date" hidden></p></div>
+      <div><label for="sec">Security name</label><input id="sec" placeholder="Name on duty" autocomplete="name"><p class="field-err" id="e-sec" hidden></p></div>
+      <div><label for="dp">Diesel purchase (L)</label><input id="dp" type="number" step="0.01" inputmode="decimal" value="0"></div>
+    </div>
+    <div class="grid2">
+      <div><label for="st">Start (HH:MM)</label><input id="st" type="time" value="09:00"><p class="field-err" id="e-st" hidden></p></div>
+      <div><label for="et">End (HH:MM)</label><input id="et" type="time" value="09:15"></div>
+    </div>
+  </div>
+
+  <div class="step" data-step="2" aria-label="Genset 1">
+    <h3>Genset 1</h3>
+    <div class="grid2"><div><label for="g1b">Before</label><input id="g1b" type="number" step="0.01" inputmode="decimal"></div><div><label for="g1a">After</label><input id="g1a" type="number" step="0.01" inputmode="decimal"></div></div>
+    <div class="grid2"><div><label for="g1l">Load kW</label><input id="g1l" type="number" step="0.001" inputmode="decimal"></div><div><label for="g1f">Fuel %</label><input id="g1f" type="number" step="0.01" inputmode="decimal"></div></div>
+    <div><label for="g1r">Run min</label><input id="g1r" type="number" step="1" inputmode="numeric"></div>
+  </div>
+
+  <div class="step" data-step="3" aria-label="Genset 2">
+    <h3>Genset 2, optional</h3>
+    <p class="mut">Skip this step if only Genset 1 ran.</p>
+    <div class="grid2"><div><label for="g2b">Before</label><input id="g2b" type="number" step="0.01" inputmode="decimal"></div><div><label for="g2a">After</label><input id="g2a" type="number" step="0.01" inputmode="decimal"></div></div>
+    <div class="grid2"><div><label for="g2l">Load kW</label><input id="g2l" type="number" step="0.001" inputmode="decimal"></div><div><label for="g2f">Fuel %</label><input id="g2f" type="number" step="0.01" inputmode="decimal"></div></div>
+    <div><label for="g2r">Run min</label><input id="g2r" type="number" step="1" inputmode="numeric"></div>
+  </div>
+
+  <div class="step" data-step="4" aria-label="Stock and review">
+    <h3>Stock and review</h3>
+    <div class="grid3">
+      <div><label for="stock">Stock in drum</label><input id="stock" type="number" step="0.01" inputmode="decimal"></div>
+      <div><label for="fuel">Fuel consumed (L)</label><input id="fuel" type="number" step="0.01" inputmode="decimal"></div>
+      <div><label for="rem">Remarks</label><input id="rem" value="Security"></div>
+    </div>
+    <h3>Review</h3><div class="review-box" id="review"></div>
+  </div>
+
+  <div class="wizard-nav">
+    <button class="ghost is-hidden" id="backBtn">Back</button>
+    <button id="nextBtn">Next</button>
+    <button id="saveBtn" class="is-hidden">Save</button>
+  </div>
+  <p id="msg" class="mut" role="status" aria-live="polite"></p>
+</div>
+</div>
+
+<div class="tabpane" id="pane-hist" role="tabpanel" aria-labelledby="tabHist" tabindex="0">
+<div class="card"><h2>History</h2>
+  <div class="row"><input id="fdate" class="filter-date" type="date" aria-label="Filter by date"><button class="ghost" id="filterBtn">Filter</button><button class="ghost" id="clearBtn">Clear</button></div>
+  <div class="table-scroll"><table><thead><tr><th>Date</th><th>Start-End</th><th>Security</th><th>Fuel(L)</th><th>By</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table></div>
+</div>
+</div>
+</div>
+<script src="/js/theme.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/genset-log.js"></script>
+</body></html>

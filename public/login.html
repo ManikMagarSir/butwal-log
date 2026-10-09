@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060607">
+<title>Login · Butwal DC Logbook</title><link rel="stylesheet" href="/css/style.css"></head>
+<body data-page="login">
+<div class="auth-shell">
+  <div class="auth-brand">
+    <div class="brand-plaque"><img class="brand-logo" src="/img/timeslogo.png" alt="Times Global logo"></div>
+    <div class="brand-title">Power<br>logbook</div>
+    <div class="brand-rule" aria-hidden="true"></div>
+    <p class="brand-sub">Meter readings, genset runs and shift notes for Butwal DC. Three slots a day, stored in one place.</p>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-box">
+      <h1>Login</h1>
+      <p class="sub">Enter your @timesglobal.com.np email. We send a one-time code.</p>
+      <div class="card">
+        <label for="email">Work email</label><input id="email" placeholder="you@timesglobal.com.np" autocomplete="email">
+        <br><button id="sendBtn">Send OTP</button>
+        <p id="msg" class="mut" role="status" aria-live="polite"></p>
+        <p class="mut">Codes arrive by email. Check spam if one doesn't show up.</p>
+      </div>
+      <p class="auth-alt mut">New here? <a href="/register.html">Register</a></p>
+    </div>
+  </div>
+</div>
+<script src="/js/theme.js"></script><script src="/js/api.js"></script>
+<script src="/js/login.js"></script></body></html>
