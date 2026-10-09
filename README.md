@@ -12,7 +12,7 @@ Replaces `DCButwal_Log2083.xlsx` + `Genset(2083).xlsx` with web logs.
 cp .env.example .env
 # edit .env: JWT_SECRET, SMTP_USER, SMTP_APP_PASS, ADMIN_EMAILS
 docker compose up --build
-# app: http://localhost:3000
+# app: http://localhost:9090
 # mongo-express (optional): docker compose --profile tools up
 ```
 

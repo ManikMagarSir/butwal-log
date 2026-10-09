@@ -11,11 +11,11 @@ services:
     restart: unless-stopped
     ports:
       # FRONTEND (+API) ONLY on LAN
-      - "0.0.0.0:3000:3000"
+      - "0.0.0.0:9090:3000"
     env_file:
       - .env
     environment:
-      - PORT=3000
+      - PORT=3000  # container port; host published as 9090
       - MONGO_URI=mongodb://mongo:27017/logbook
     depends_on:
       - mongo
